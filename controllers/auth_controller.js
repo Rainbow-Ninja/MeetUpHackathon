@@ -32,7 +32,12 @@ const loginCreate = async (req, res) => {
         return res.render("login/login", {error: "Invalid user"})
     } 
     
-  
+    // const validUser = await user.verifyPassword(password);
+    // if(!validUser) {
+    //     return res.render("login/login", {error: "Invalid password"});
+    // }
+    // req.session.user = user;
+    // res.redirect("/");
     res.send("LoginCreated");
 }
 
