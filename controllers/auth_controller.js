@@ -5,15 +5,28 @@ const registerNew = (req, res) => {
 }
 
 const registerCreate = async (req, res) => {
-    let {email, password} = req.body;
-    let user = await User.create({email, password});
-    req.session.user = user
-    console.log(user);
+    try{
+        console.log("#####################", req.body);
+        let {email, password} = req.body;
+        let user = await User.create({email, password});
+        //req.session.user = user;
+        console.log("$$$$$$$$$$$$$$$$$$$$$$ ", user);
+
+    }
+    catch(err){
+        console.log("-------------------", err);
+    }
+    
     // res.redirect("/");
     res.send("created");
 }
 
+const loginNew = (req, res) => {
+    res.render("login/login");
+}
+
 module.exports = {
     registerNew,
-    registerCreate
+    registerCreate,
+    loginNew
 }
