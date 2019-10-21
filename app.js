@@ -2,6 +2,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 require("./database/connect");
 
 
@@ -20,6 +21,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "app" }));
 app.set("view engine", "handlebars");
 
 app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(require("./routes/login_routes"));
 app.use(require("./routes/event_routes"));
