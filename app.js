@@ -21,9 +21,5 @@ app.set("view engine", "handlebars");
 
 app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 
-<<<<<<< HEAD
 app.use(require("./routes/login_routes"));
 app.use(require("./routes/event_routes"));
-=======
-app.use(require("./routes/index.js"));
->>>>>>> df32e8e9034898bd802a75755aa3a0fb0316ea2b
