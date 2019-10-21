@@ -5,6 +5,11 @@ async function index(req, res) {
     res.render("event/index", {event});
 }
 
+function make (req, res) {
+    res.render("event/new");
+}
+
 module.exports = {
-    index
+    index,
+    make
 }
