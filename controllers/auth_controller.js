@@ -1,4 +1,4 @@
-const User = require("../models/user_model");
+const User = require("../../database/models/user_model");
 
 const registerNew = (req, res) => {
     // res.send("RegisterNew");

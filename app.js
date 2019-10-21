@@ -5,18 +5,20 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-var port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`started server on port ${port}`);
-});
-
-// mongoose.connect("mongodb://localhost/", { useNewUrlParser: true });
-// mongoose.Promise = global.Promise;
-// mongoose.connection.on("error", err => console.log(err));
+const port = 3000;
 
 app.engine("handlebars", exphbs({ defaultLayout: "app" }));
 app.set("view engine", "handlebars");
 
 app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 
-app.use(require("./routes/login_routes"));
+app.use(require("./routes"));
+
+app.use(express.static("public"));
+
+
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
+// app.listen(port, () => console.log(`Listening on port ${port}`));
+module.exports = app;
