@@ -1,7 +1,6 @@
 const User = require("../database/models/user_model");
 
 const registerNew = (req, res) => {
-    // res.send("RegisterNew");
     res.render("login/register");
 }
 
