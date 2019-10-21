@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const AuthController = require("./../controllers/auth_controller");
+const AuthController = require("../controllers/auth_controller");
 
 router.get('/', (req, res) => {
     res.render('welcome');
