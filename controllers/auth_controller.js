@@ -2,7 +2,7 @@ const User = require("../../database/models/user_model");
 
 const registerNew = (req, res) => {
     // res.send("RegisterNew");
-    res.render("/register");
+    res.render("login/register");
 }
 
 const registerCreate = async (req, res) => {
