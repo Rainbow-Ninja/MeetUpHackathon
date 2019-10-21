@@ -20,3 +20,4 @@ app.set("view engine", "handlebars");
 app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 
 app.use(require("./routes/login_routes"));
+app.use(require("./routes/event_routes"));
