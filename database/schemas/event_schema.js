@@ -28,7 +28,7 @@ const EventSchema = new Schema({
     },
     picture:{
         type: String,
-        required: true
+        // required: true
     }
 });
 
