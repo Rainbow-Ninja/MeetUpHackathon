@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
+const keys = require('../config/keys')
 
-mongoose.connect("mongodb://localhost/meetup_hack", { useNewUrlParser: true });
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 mongoose.connection.on("error", console.log);

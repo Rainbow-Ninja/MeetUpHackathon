@@ -1,0 +1,14 @@
+<h1>Login</h1>
+
+{{#if error}}
+    <p>{{error}}</p>
+{{/if}}
+
+<form action = "/login" method="POST">
+    <label>Email</label>
+    <input name="email" type="text"/>
+    <label>Password</label>
+    <input name="password" type="password"/>
+    <input type="submit" value="Submit"/>
+</form>
+    <a href="/auth/google">Sign In with Google</a>

@@ -1,7 +1,7 @@
 <div id="newBlog">
     <h1>New Event</h1>
 
-    <form method="post" action="/event">
+    <form method="post" action="/event" >
         <div>
             <label>Title</label>
         </div>
@@ -27,12 +27,19 @@
             <input type="date" name="date" />
         </div>
         <br>
+         <div>
+            <label>Address</label>
+        </div>
+        <div>
+            <input name="address" />
+        </div>
         <div>
             <label>Details</label>
         </div>
         <div>
             <textarea name="details"></textarea>
         </div>
+
         <div>
             <input type="submit" value="Submit Form" />
         </div>
