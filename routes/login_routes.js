@@ -31,19 +31,6 @@ router.get("/dashboard", passport.authenticate('jwt', {
 
 
 
-////// google oauth routes ///////
-router.get('/auth/google',
-    passport.authenticate('google', {
-        scope: ['https://www.googleapis.com/auth/plus.login']
-    }));
-router.get('/auth/google/callback',
-    passport.authenticate('google', {
-        failureRedirect: '/login'
-    }),
-    function (req, res) {
-        res.redirect('/');
-    });
-/////////////////////////
 
 
 

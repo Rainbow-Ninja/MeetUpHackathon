@@ -4,6 +4,7 @@ const JwtStrategy = require('passport-jwt').Strategy,
     ExtractJwt = require('passport-jwt').ExtractJwt;
 const User = require("../database/models/user_model");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const keys = require('./keys')
 
 ////////////// JWT token ////////////////
 var opts = {}
@@ -19,9 +20,9 @@ opts.secretOrKey = 'secretkey';
 
 ////////// OAuth Google ////////////////////
 passport.use(new GoogleStrategy({
-        clientID: '713446049924-h8tjrt5mdtvef21khv066712pbsjs747.apps.googleusercontent.com',
-        clientSecret: '1KXXuLSWLduNp8A3CM_D2PYv',
-        callbackURL: "http://localhost/"
+        clientID: keys.googleClientID,
+        clientSecret: keys.googleClientSecret,
+        callbackURL: "auth/google/callback"
     },
     function (accessToken, refreshToken, profile, cb) {
         User.findOrCreate({
