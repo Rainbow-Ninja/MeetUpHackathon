@@ -1,7 +1,33 @@
-<div id="newBlog">
-    <h1>New Event</h1>
+<style>
+    body{
+        background-image: url(https://images.pexels.com/photos/210205/pexels-photo-210205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    
+    }
 
-    <form method="post" action="/event" >
+    #newEvent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input, textarea{
+        width: 100%;
+    }
+
+    form{
+        width: 30%;
+        padding: 2%;
+        background-color: rgba(240, 207, 176, 0.5);
+    }
+
+</style>
+
+<div id="newEvent">
+    <br>
+    <h1>New Event</h1>
+    <br>
+    <form method="post" action="/event" enctype="multipart/form-data" >
         <div>
             <label>Title</label>
         </div>
@@ -39,7 +65,7 @@
         <div>
             <textarea name="details"></textarea>
         </div>
-
+        <input type="file" name="picture"/>
         <div>
             <input type="submit" value="Submit Form" />
         </div>

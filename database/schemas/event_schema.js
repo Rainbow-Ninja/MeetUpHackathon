@@ -8,7 +8,7 @@ const EventSchema = new Schema({
     },
     date: {
         type: Date,
-        required: true
+        // required: true
     },
     startTime: {
         type: String,
@@ -25,6 +25,10 @@ const EventSchema = new Schema({
     details: {
         type: String,
         default: ""
+    },
+    picture:{
+        type: String,
+        // required: true
     }
 });
 
