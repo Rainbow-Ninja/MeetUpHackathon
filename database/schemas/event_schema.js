@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const user = require('./user_schema')
+const UserSchema = require('./user_schema')
 
 const EventSchema = new Schema({
     title: {
@@ -26,7 +26,8 @@ const EventSchema = new Schema({
     details: {
         type: String,
         default: ""
-    }
+    },
+    user: [UserSchema]
 });
 
 module.exports = EventSchema;

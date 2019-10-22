@@ -9,6 +9,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const cookieParser = require('cookie-parser');
 
+
 require("./database/connect");
 const app = express();
 
@@ -53,3 +54,5 @@ app.use(bodyParser.json());
 app.use(require("./routes/login_routes"));
 app.use(require("./routes/event_routes"));
 app.use(require('./routes/auth_routes'));
+
+module.exports = app;
