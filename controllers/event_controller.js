@@ -35,6 +35,7 @@ const update = async (req, res) => {
 }
 
 const destroy = async (req, res) => {
+    console.log("PARAMS --------- ", req.params);
     let { id } = req.params
     await EventModel.findByIdAndDelete(id)
         .catch(err => res.status(500).send(err));
