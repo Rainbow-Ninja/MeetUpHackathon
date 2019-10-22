@@ -1,8 +1,36 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC&display=swap'); 
+
+    body{
+        background-image: url(https://images.pexels.com/photos/935835/pexels-photo-935835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    .card, .card-body, .list-group-item{
+        background-color: rgba(240, 240, 247, 0.575);
+    }
+
+    h1{
+        font-family: 'Patrick Hand SC', cursive;
+        color: white;
+        -webkit-text-stroke: 1px black;
+        text-shadow:
+            3px 3px 0 #000,
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+        text-align: center;
+    }
+
+</style>
+
 <div id="welcomePage">
-    <h1>Welcome</h1>
-    <a href="/event/new">Create New Event</a>
+    
 
     <div class="container">
+        <h1>Welcome to the greatest HangOut App OF ALL TIME!!</h1>
+        <a href="/event/new">Create New Event</a>
         <div class="card-deck">
             <div class="row">
                 {{#each event}}
