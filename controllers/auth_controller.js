@@ -4,10 +4,8 @@ const EventModel = require("../database/models/event_model");
 
 async function welcome(req, res) {
     let event = await EventModel.find();
-    console.log("EVENT-------- ",event);
     let date = event.date;
-    console.log("*********** ", date);
-    res.render("welcome", {event});
+    res.render("welcome", {event, date});
 }
 
 const registerNew = (req, res) => {
@@ -28,7 +26,7 @@ const registerCreate = async (req, res) => {
     } catch (err) {
         console.log("catching register creation error", err);
     }
-    res.send("created");
+    res.redirect("/");
 }
 
 const loginNew = (req, res) => {
