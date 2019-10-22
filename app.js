@@ -39,8 +39,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// handlebars setup
-app.engine("handlebars", exphbs({ defaultLayout: "app" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // method override
