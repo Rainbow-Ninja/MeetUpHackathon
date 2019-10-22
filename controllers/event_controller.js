@@ -14,7 +14,7 @@ async function create(req, res) {
     let { title, date, startTime, endTime, address, details } = req.body;
     let picture  = req.file.filename;
     console.log(req.file);
-    let event = await EventModel.create({ title, date, startTime, endTime, address, details, picture })
+    await EventModel.create({ title, date, startTime, endTime, address, details, picture })
         .catch(err => res.status(500).send(err));
     res.redirect("/event");
 }
