@@ -26,10 +26,6 @@ const EventSchema = new Schema({
         type: String,
         default: ""
     }
-    // picture: {
-    //     type: String,
-    //     required: true
-    // }
 });
 
 module.exports = EventSchema;
