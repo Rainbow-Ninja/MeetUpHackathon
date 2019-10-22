@@ -1,9 +1,39 @@
-<h1>SIGN UP</h1>
+<style>
+    body{
+        background-image: url(https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    
+    }
 
-<form action = "/register" method="POST">
-    <label>Email</label>
-    <input name="email" type="text"/>
-    <label>Password</label>
-    <input name="password" type="password"/>
-    <input type="submit" value="Submit"/>
-</form>
+    #registerPage{
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input{
+        width: 100%;
+    }
+
+    form{
+        width: 30%;
+        padding: 2%;
+        background-color: rgba(70, 96, 67, 0.5);
+    }
+
+</style>
+
+<div id="registerPage">
+    <h1>Sign Up for the Fun!</h1>
+
+    <form action = "/register" method="POST">
+        <label>Email</label>
+        <input name="email" type="text"/>
+        <br><br>
+        <label>Password</label>
+        <input name="password" type="password"/>
+        <br><br>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
