@@ -47,7 +47,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">LogOut</a>
             </li>
+            {{#if user.session}}
             <li>Welcome {{user.email}}</li>
+            {{/if}}
         {{!-- {{/if}} --}}
             <li class="nav-item">
                 <a class="nav-link" href="/register">Register</a>
