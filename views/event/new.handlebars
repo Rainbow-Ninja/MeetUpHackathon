@@ -1,7 +1,7 @@
 <div id="newBlog">
     <h1>New Event</h1>
 
-    <form method="post" action="/upload" enctype="multipart/form-data">
+    <form method="post" action="/event" enctype="multipart/form-data">
         <div>
             <label>Title</label>
         </div>
@@ -42,7 +42,7 @@
         {{!-- <div>
             <label>Picture</label>
         </div> --}}
-        <div class="file-field input-field">
+        {{!-- <div class="file-field input-field">
             <div class="btn">
             <span>Picture</span>
                 <input type="file" name="picture" multiple>
@@ -50,7 +50,7 @@
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
             </div>
-        </div>
+        </div> --}}
         <div>
             <input type="submit" value="Submit Form" />
         </div>

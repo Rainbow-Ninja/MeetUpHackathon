@@ -12,24 +12,24 @@ const EventSchema = new Schema({
     },
     startTime: {
         type: String,
-        required: true
+        // required: true
     },
     endTime: {
         type: String,
-        required: true
+        // required: true
     },
     address: {
         type: String,
-        required: true
+        // required: true
     },
     details: {
         type: String,
         default: ""
-    },
-    picture: {
-        type: String,
-        required: true
     }
+    // picture: {
+    //     type: String,
+    //     required: true
+    // }
 });
 
 module.exports = EventSchema;

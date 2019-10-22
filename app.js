@@ -4,7 +4,7 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const multer  = require('multer');
-let upload = multer({ dest: 'uploads/' });
+// let upload = multer({ dest: 'uploads/' });
 require("./database/connect");
 
 
@@ -19,7 +19,7 @@ app.listen(port, () => {
 // mongoose.Promise = global.Promise;
 // mongoose.connection.on("error", err => console.log(err));
 
-app.engine("handlebars", exphbs({ defaultLayout: "app" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
@@ -30,10 +30,10 @@ app.use(bodyParser.json());
 app.use(require("./routes/login_routes"));
 app.use(require("./routes/event_routes"));
 
-app.post('/uploads', upload.single('picture'), function (req, res, next) {
-  // req.file is the `avatar` file
-  // req.body will hold the text fields, if there were any
-})
+// app.post('/uploads', upload.single('picture'), function (req, res, next) {
+//   // req.file is the `avatar` file
+//   // req.body will hold the text fields, if there were any
+// })
 
 // set storage Engine
 const storage = multer.diskStorage({
@@ -72,8 +72,8 @@ const checkFileType = (file, cb) => {
   }
 };
 
-require("./models/event_model");
-const Event = mongoose.model("event_model");
+// require("./models/event_model");
+const Event = require('./database/models/event_model');
 // middle ware start
 app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -93,7 +93,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/upload", (req, res) => {
+app.post("/event", (req, res) => {
   console.log(req.body);
   upload(req, res, err => {
     if (err) {
