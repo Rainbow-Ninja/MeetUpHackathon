@@ -8,5 +8,8 @@ router.get("/event", EventController.index);
 router.get("/event/new", EventController.make);
 router.post("/event", upload.single('picture'), EventController.create);
 router.get("/event/edit/:id", EventController.edit);
+router.get("/event/edit/:id", EventController.edit);
+router.put("/event/:id", EventController.update);
+router.delete("/event/:id", EventController.destroy);
 
 module.exports = router;

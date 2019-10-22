@@ -4,6 +4,9 @@ const EventModel = require("../database/models/event_model");
 
 async function welcome(req, res) {
     let event = await EventModel.find();
+    console.log("EVENT-------- ",event);
+    let date = event.date;
+    console.log("*********** ", date);
     res.render("welcome", {event});
 }
 
