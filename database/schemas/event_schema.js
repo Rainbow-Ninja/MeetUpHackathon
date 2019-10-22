@@ -9,7 +9,7 @@ const EventSchema = new Schema({
     },
     date: {
         type: Date,
-        required: true
+        // required: true
     },
     startTime: {
         type: String,
@@ -32,6 +32,10 @@ const EventSchema = new Schema({
         ref: "users"
     },
   
+    picture:{
+        type: String,
+        // required: true
+    }
 });
 
 module.exports = EventSchema;

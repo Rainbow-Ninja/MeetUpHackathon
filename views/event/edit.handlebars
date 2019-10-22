@@ -1,0 +1,47 @@
+<div id="editEvent">
+    <h1>Edit Event</h1>
+
+    <form method="post" action="/event/{{event._id}}?_method=PUT">
+        <div>
+            <label>Title</label>
+        </div>
+        <div>
+            <input type="text" name="title" value="{{event.title}}"/>
+        </div>
+         <div>
+            <label>Start Time</label>
+        </div>
+        <div>
+            <input type="time" name="startTime" value="{{event.startTime}}"/>
+        </div>
+         <div>
+            <label>End Time</label>
+        </div>
+        <div>
+            <input type="time" name="endTime" value="{{event.endTime}}"/>
+        </div>
+          <div>
+            <label>Date</label>
+        </div>
+        <div>
+            <input type="date" name="date" value="{{event.date}}"/>
+        </div>
+        <br>
+         <div>
+            <label>Address</label>
+        </div>
+        <div>
+            <input type="text" name="address" value="{{event.address}}"/>
+        </div>
+        <div>
+            <label>Details</label>
+        </div>
+        <div>
+            <textarea name="details">{{event.details}}</textarea>
+        </div>
+        <input type="file" name="picture" />
+        <div>
+            <input type="submit" value="Submit Form" />
+        </div>
+    </form>
+</div>

@@ -16,6 +16,7 @@ router.post("/register", AuthController.registerCreate);
 
 // login routes
 router.get("/login", AuthController.loginNew);
+router.get("/login/:id", AuthController.loginShow);
 router.post("/login", passport.authenticate('local', {
     failureRedirect: '/login',
     session: false
@@ -26,9 +27,6 @@ router.get("/logout", AuthController.logout);
 router.get("/dashboard", passport.authenticate('jwt', {
     session: false
 }));
-
-
-
 
 
 
