@@ -19,6 +19,13 @@ async function create(req, res) {
     res.redirect("/event");
 }
 
+const show = async (req, res) => {
+    let {id} = req.params;
+    let event = await EventModel.findById(id)
+        .catch(err => res.status(500).send(err))
+    res.render("event/show", {event});
+}
+
 const edit = async (req, res) => {
     let {id} = req.params;
     let event = await EventModel.findById(id)
@@ -46,6 +53,7 @@ module.exports = {
     index,
     make,
     create,
+    show,
     edit,
     update,
     destroy
