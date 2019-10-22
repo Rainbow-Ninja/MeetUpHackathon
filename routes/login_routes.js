@@ -8,9 +8,7 @@ const {
 } = require("../middleware/auth_middleware");
 
 
-router.get('/', (req, res) => {
-    res.render('welcome');
-});
+router.get('/', AuthController.welcome);
 
 //  Register routes 
 router.get("/register", authRedirect, AuthController.registerNew);

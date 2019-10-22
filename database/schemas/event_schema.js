@@ -18,6 +18,10 @@ const EventSchema = new Schema({
         type: String,
         required: true
     },
+    address: {
+        type: String,
+        required: true
+    },
     details: {
         type: String,
         default: ""
