@@ -52,3 +52,4 @@ app.use(bodyParser.json());
 // requiring routes files
 app.use(require("./routes/login_routes"));
 app.use(require("./routes/event_routes"));
+app.use(require('./routes/auth_routes'));
