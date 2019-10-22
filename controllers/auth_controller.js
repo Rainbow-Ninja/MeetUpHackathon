@@ -1,4 +1,10 @@
 const User = require("../database/models/user_model");
+const EventModel = require("../database/models/event_model");
+
+async function welcome(req, res) {
+    let event = await EventModel.find();
+    res.render("welcome", {event});
+}
 
 const registerNew = (req, res) => {
     res.render("login/register");
@@ -42,6 +48,7 @@ const loginCreate = async (req, res) => {
 }
 
 module.exports = {
+    welcome,
     registerNew,
     registerCreate,
     loginNew,
