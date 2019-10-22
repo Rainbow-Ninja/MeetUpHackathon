@@ -4,7 +4,12 @@
 
     {{#each event}}
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="uploads/{{this.picture}}" alt="Card image cap">
+            {{#if this.picture}}
+               <h1>hello {{this.picture}}</h1>
+                <img class="card-img-top" src="uploads/{{this.picture}}" alt="Card image cap">
+            {{else}}
+                <img class="card-img-top" src="../images/friends.png" alt="Card image cap">
+            {{/if}}
             <div class="card-body">
                 <h5 class="card-title">{{this.title}}</h5>
                 <p class="card-text">{{this.details}}</p>
