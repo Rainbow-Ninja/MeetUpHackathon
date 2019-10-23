@@ -10,11 +10,10 @@ function make (req, res) {
 }
 
 async function create(req, res) {
-    console.log("#################### ", req.body);
     let { title, date, startTime, endTime, address, details} = req.body;
     let picture  = req.file.filename;
     console.log(req.file);
-    await EventModel.create({ title, date, startTime, endTime, address, details, picture })
+    let event = await EventModel.create({ title, date, startTime, endTime, address, details, picture })
         .catch(err => res.status(500).send(err));
         console.log(event);
 

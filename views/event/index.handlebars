@@ -8,7 +8,12 @@
     .card, .card-body, .list-group-item{
         background-color: rgba(240, 240, 247, 0.575);
     }
-    
+    #newEv {
+        color: white;
+        display:flex;
+        justify-content: center;
+
+    }
 
 </style>
 
@@ -17,7 +22,7 @@
 
 <div class="container">
     <h1>Events Index</h1>
-    <a href="/event/new">Create New Event</a>
+    <a id='newEv' href="/event/new" >Create New Event</a>
         <div class="card-deck">
             <div class="row">
                 {{#each event}}
@@ -50,4 +55,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
