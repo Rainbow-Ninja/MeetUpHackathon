@@ -33,7 +33,13 @@ const loginNew = (req, res) => {
     res.render("login/login");
 }
 
-const loginCreate =  (req, res) => {
+const loginCreate =  async (req, res) => {
+    console.log("oooooooooooooooo ", req.body);
+    let {email, password} = req.body;
+    let user = await User.findOne({email});
+    if(!user) {
+        return res.render("login/login", {error: "Invalid user"})
+    } 
     try {
     const token = jwt.sign({
         sub: req.user._id

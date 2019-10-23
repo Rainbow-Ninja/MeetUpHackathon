@@ -9,6 +9,9 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const cookieParser = require('cookie-parser');
 
+const path = require("path")
+
+
 require("./database/connect");
 const app = express();
 
@@ -48,6 +51,13 @@ app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+//static files
+
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')))
+app.use('/event', express.static(path.join(__dirname, 'public')))
+
 
 // requiring routes files
 app.use(require("./routes/login_routes"));
