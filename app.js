@@ -59,6 +59,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/event', express.static(path.join(__dirname, 'public')))
 
 
+app.use((req, res, next) => {
+  console.log("USER", req.user)
+  res.locals.user = req.user || null;
+  next();
+});
+
 // requiring routes files
 app.use(require("./routes/login_routes"));
 app.use(require("./routes/event_routes"));
