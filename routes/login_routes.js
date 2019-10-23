@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const AuthController = require("../controllers/auth_controller");
+const PageController = require("../controllers/page_controller");
 const passport = require("passport");
 const {
     authRedirect,
@@ -16,17 +17,17 @@ router.post("/register", AuthController.registerCreate);
 
 // login routes
 router.get("/login", AuthController.loginNew);
-router.get("/login/:id", AuthController.loginShow);
-router.post("/login", passport.authenticate('local', {
-    failureRedirect: '/login',
-    session: false
-}), AuthController.loginCreate)
+// router.get("/login/:id", AuthController.loginShow);
+router.post("/login", 
+    passport.authenticate('local', {
+    failureRedirect: '/login' }), 
+    AuthController.loginCreate
+    );
 
 // logout routes
 router.get("/logout", AuthController.logout);
-router.get("/dashboard", passport.authenticate('jwt', {
-    session: false
-}));
+router.get("/dashboard", passport.authenticate('jwt', {session: false}), PageController.dashboard);
+
 
 
 

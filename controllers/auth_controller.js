@@ -13,7 +13,6 @@ const registerNew = (req, res) => {
 }
 
 const registerCreate = async (req, res) => {
-    try {
         let {
             email,
             password
@@ -22,35 +21,30 @@ const registerCreate = async (req, res) => {
             email,
             password
         });
-
-    } catch (err) {
-        console.log("catching register creation error", err);
-    }
-    res.redirect("/");
+        req.login(user, (err) => {
+            if(err) {
+                return next(err);
+            }
+        })
+        console.log('----=-=-=-=-=-=-', user)
+    const token = jwt.sign({sub: req.user._id}, 'secretkey');
+    res.cookie("jwt", token);
+    res.redirect("/event");
 }
 
 const loginNew = (req, res) => {
-    res.render("login/login");
+    res.render('login/login');
 }
 
 const loginCreate =  async (req, res) => {
-    console.log("oooooooooooooooo ", req.body);
-    let {email, password} = req.body;
-    let user = await User.findOne({email});
-    if(!user) {
-        return res.render("login/login", {error: "Invalid user"})
-    } 
-    try {
     const token = jwt.sign({
         sub: req.user._id
     }, 'secretkey');
-    console.log("token", token);
+    console.log("token-----------", token);
     res.cookie('jwt', token);
-    res.redirect('/')
-    } catch (err) {
-        console.log('---------------  catching a JWT token error logging', err)
+    res.redirect('/event')
     };
-}
+
 
 const loginShow = async (req, res) => {
     console.log("LOGIN PARAMS ------------ ", req.params)
@@ -67,7 +61,7 @@ const logout = (req, res) => {
     res.cookie('jwt', null, {
         maxAge: -1
     });
-    res.redirect("/");
+    res.redirect("/login");
 }
 
 
