@@ -35,6 +35,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use((req, res, next) => {
+  console.log("USER", req.user)
+  res.locals.user = req.user || null;
+  next();
+})
+
 
 // passport setup and require passport file
 require("./config/passport");

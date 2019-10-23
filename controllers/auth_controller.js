@@ -64,9 +64,7 @@ const loginShow = async (req, res) => {
 
 const logout = (req, res) => {
     req.logout();
-    res.cookie('jwt', null, {
-        maxAge: -1
-    });
+    res.cookie("jwt", null, { maxAge: -1 });
     res.redirect("/");
 }
 

@@ -1,14 +1,9 @@
 <style>
-    {{!-- #eventShow {
-        padding: 5%;
-        background-color: blanchedalmond;
-    } --}}
 
     body{
         background-image: url(https://images.pexels.com/photos/935835/pexels-photo-935835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
         background-repeat:no-repeat;
         background-position: center;
-
     }
 
     #eventShow{
@@ -29,15 +24,15 @@
 
 
 <div id="eventShow">
-
     <h1>Can't wait to see you there!!</h1>
     <div id="singleEvent">
     {{!-- <img src={{event.picture}}/> --}}
-    <h2>{{event.title}}</h2>
-    <h4>Time: {{event.startTime}} - {{event.endTime}}</h4>
-    <h4>Date: {{event.date}}</h4>
-    <h4>Address: {{event.address}}</h4>
-    <h4>Details: {{event.details}}</h4>
-    <a class="btn btn-sm btn-primary" href="/event">Back to All</a>
+        <h2>{{event.title}}</h2>
+        <h4>Time: {{event.startTime}} - {{event.endTime}}</h4>
+        <h4>Date: {{event.date}}</h4>
+        <h4>Address: {{event.address}}</h4>
+        <h4>Details: {{event.details}}</h4>
+        <a class="btn btn-sm btn-primary" href="/event">Back to All</a>
+        <a class="btn btn-sm btn-primary" href="/event">Attend this event</a>
     </div>
 </div>

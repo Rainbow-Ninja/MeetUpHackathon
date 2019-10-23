@@ -26,6 +26,10 @@ const EventSchema = new Schema({
         type: String,
         default: ""
     },
+    attendees: {
+        type: Number,
+        default: 0
+    },
     picture:{
         type: String,
         // required: true

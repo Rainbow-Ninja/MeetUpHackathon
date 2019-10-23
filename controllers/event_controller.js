@@ -11,13 +11,11 @@ function make (req, res) {
 
 async function create(req, res) {
     console.log("#################### ", req.body);
-    let { title, date, startTime, endTime, address, details} = req.body;
+    let { title, date, startTime, endTime, address, attendees, details} = req.body;
     let picture  = req.file.filename;
     console.log(req.file);
-    await EventModel.create({ title, date, startTime, endTime, address, details, picture })
+    let event = await EventModel.create({ title, date, startTime, endTime, address, attendees, details, picture })
         .catch(err => res.status(500).send(err));
-        console.log(event);
-
     res.redirect("/event");
 }
 
@@ -42,6 +40,18 @@ const update = async (req, res) => {
         .catch(err => res.status(500).send(err));
     res.redirect(`/event/${id}`)
 }
+
+// const attend = async (req, res) => {
+//     let { id } = req.params
+//     let { attendees } = req.body
+//     let newAttendees = attendees++;
+//     await EventModel.findByIdAndUpdate(id, {newAttendees})
+//     console.log("REQ ATTENDEES>>>>>>>>>", req.body)
+//     console.log("NEW ATTENDEES>>>>>>>>>", newAttendees)
+
+//         .catch(err => res.status(500).send(err));
+//     res.redirect(`/event/${id}`)
+// }
 
 const destroy = async (req, res) => {
     console.log("PARAMS --------- ", req.params);
